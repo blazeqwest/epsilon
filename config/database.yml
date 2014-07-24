@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: epsilon_production
-  username: epsilon
-  password: <%= ENV['EPSILON_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: epsilon_production
+#   username: epsilon
+#   password: <%= ENV['EPSILON_DATABASE_PASSWORD'] %>
