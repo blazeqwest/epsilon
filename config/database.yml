@@ -14,20 +14,17 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
 development:
   <<: *default
-  adapter: postgresql
-  host: localhost
-  username: user
-  database: epsilon_development
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,6 +59,8 @@ development:
 test:
   <<: *default
   database: epsilon_test
+  user: postgres
+  password: postgres
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: epsilon_production
-  username: epsilon
-  password: <%= ENV['EPSILON_DATABASE_PASSWORD'] %>
+
