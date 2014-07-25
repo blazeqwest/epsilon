@@ -7,3 +7,6 @@ deploy:
   on:
     repo: blazeqwest/epsilon
     branch: dev
+  run: "rake db:migrate"
+before_script:
+  - psql -c 'create database TestDB;' -U postgres
