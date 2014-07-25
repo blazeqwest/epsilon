@@ -9,4 +9,4 @@ deploy:
     branch: dev
   run: "rake db:migrate"
 before_script:
-  - psql -c 'create database TestDB;' -U postgres
+  - psql -c 'create database eps_test;' -U postgres
