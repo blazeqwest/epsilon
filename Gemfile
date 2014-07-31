@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # UI Framework
 gem 'foundation-rails'
 
+# Devise Authentication
+gem 'devise'
+
 
 group :development, :test do
   gem 'pry-rails'
