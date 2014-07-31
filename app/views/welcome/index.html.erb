@@ -1,9 +1,2 @@
 <h1>Hello!</h1>
-<% if user_signed_in? %>
-  Welcome to Epsilon project!
-  <br>
-  <%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "button" %>
-<% else %>
-    <%= link_to "Sign in", new_user_session_path, class: "button radius" %>
-<% end %>
-
+<p>Welcome to Epsilon project!</p>
