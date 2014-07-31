@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# UI Framework
+gem 'foundation-rails'
+
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry'
