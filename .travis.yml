@@ -8,5 +8,9 @@ deploy:
     repo: blazeqwest/epsilon
     branch: dev
   run: "rake db:migrate"
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
 before_script:
   - psql -c 'create database eps_test;' -U postgres
