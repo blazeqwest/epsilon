@@ -12,19 +12,7 @@
   </head>
 
   <body>
-    <% if notice %>
-      <div data-alert class="alert-box info radius">
-        <%= notice %>
-        <%= link_to  'x', "#", class: "close"  %>
-      </div>
-    <% end %>
-    
-    <% if alert %>
-      <div data-alert class="alert-box warning radius">
-        <%= alert %>
-        <%= link_to 'x', "#", class: "close" %>
-      </div>
-    <% end %>
+
   
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
@@ -54,7 +42,20 @@
   <!--Main content area-->
   <div class="row">
     <div class="small-9 columns"><h2>Welcome to Epsilon: Place what counts</h2></div>
-    <div class="small-3 columns"></div>
+    <div class="small-3 columns">
+      <% if notice %>
+        <div data-alert class="alert-box info radius">
+            <%= notice %>
+            <%= link_to  'x', "#", class: "close"  %>
+        </div>
+      <% end %>
+        <% if alert %>
+          <div data-alert class="alert-box warning radius">
+            <%= alert %>
+            <%= link_to 'x', "#", class: "close" %>
+          </div>
+        <% end %>
+    </div>
   </div>
     <div class="row">
     <div class="small-9 columns"><%= yield %></div>
