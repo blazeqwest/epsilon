@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :transaction do
-    amount 1.5
+    amount 100
+    association :account, factory: :account
   end
 end

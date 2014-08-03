@@ -1,4 +1,4 @@
 class Account < ActiveRecord::Base
-  belongs_to :users
+  belongs_to :user
   has_many :transactions
 end

@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :account do
-    name "MyString"
-    balance 1.5
+    name { Faker::Lorem.word }
+    balance 12.05
+    association :user, factory: :user
   end
 end
