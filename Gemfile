@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+# UI Framework
+gem 'foundation-rails'
+
+# Devise Authentication
+gem 'devise'
+
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry'
@@ -10,7 +17,7 @@ group :development, :test do
 end
 group :test do
  gem 'rspec-rails'
- gem 'spork'
+ gem 'spork-rails'
  gem 'database_cleaner'
  gem 'shoulda-matchers'
  gem 'webmock'
