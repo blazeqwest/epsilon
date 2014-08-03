@@ -13,14 +13,57 @@
 
   <body>
     <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
+      <div data-alert class="alert-box info radius">
+        <%= notice %>
+        <a href="#" class="close">&times;</a>
+      </div>
     <% end %>
     
     <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+      <div data-alert class="alert-box warning radius">
+        <%= alert %>
+        <a href="#" class="close">&times;</a>
+      </div>
     <% end %>
+  
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/">Epsilon project</a></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    <!-- Top navigation menu -->
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+      <% if user_signed_in? %>        
+        <li class="has-dropdown">
+          <a>Logged in as <strong><%= current_user.email %></strong></a>
+          <ul class="dropdown">
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      <% end %>
+      </ul>
+    </section>
+  </nav>
 
-    <%= yield %>
+  <!--Main content area-->
+  <div class="row">
+    <div class="small-9 columns"><h2>Welcome to Epsilon: Place what counts</h2></div>
+    <div class="small-3 columns"></div>
+  </div>
+    <div class="row">
+    <div class="small-9 columns"><%= yield %></div>
+    <div class="small-3 columns">
+      <h3>Tip of the day:</h3>
+      <%= Faker::Lorem.paragraph %>
+    </div>
+  </div>
+    
     <%= javascript_include_tag "application" %>
   </body>
 </html>
