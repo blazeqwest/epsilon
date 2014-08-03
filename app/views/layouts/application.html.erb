@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : " Epsilon project" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -15,21 +15,21 @@
     <% if notice %>
       <div data-alert class="alert-box info radius">
         <%= notice %>
-        <a href="#" class="close">&times;</a>
+        <%= link_to  'x', "#", class: "close"  %>
       </div>
     <% end %>
     
     <% if alert %>
       <div data-alert class="alert-box warning radius">
         <%= alert %>
-        <a href="#" class="close">&times;</a>
+        <%= link_to 'x', "#", class: "close" %>
       </div>
     <% end %>
   
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/">Epsilon project</a></h1>
+        <h1><link_to 'Epsilon project', root_path>Epsilon project</a></h1>
       </li>
       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -60,7 +60,7 @@
     <div class="small-9 columns"><%= yield %></div>
     <div class="small-3 columns">
       <h3>Tip of the day:</h3>
-      <p>Here we will show some advices</p>
+      <%= Faker::Lorem.paragraph %>
     </div>
   </div>
     
