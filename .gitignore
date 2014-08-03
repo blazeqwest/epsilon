@@ -16,4 +16,4 @@
 /tmp
 
 # ignore public assets folder
-/public/assets/*
+/public/assets/
