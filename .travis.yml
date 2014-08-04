@@ -1,9 +1,16 @@
 language: ruby
+#whitelist for branches
+branches:
+  only:
+    - master
+    - dev
 deploy:
   provider: heroku
   api_key:
     secure: G73yTkQaMSxANbvwCxr8WVxdHuyiJm073hHDvBdX8oriz70Xhs4Z0nEnXhtq0SHWeHTuiZhVFUTcMfatCxVs3kzeIBla62x1OddbcwVJWkargzsUz+dU9F9WB/ny572oqRdwbk4OIIQkUlpXyRnhXoQwBwfZ72OZwjO4o9c7j8E=
-  app: epsilon-stage
+  app: 
+    master: epsilon-live
+    dev: epsilon-stage
   on:
     repo: blazeqwest/epsilon
     branch: dev
