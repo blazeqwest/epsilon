@@ -274,6 +274,8 @@ $primary-color: #008CBA;
 // $alert-border-width: 1px;
 // $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
 // $alert-bottom-margin: rem-calc(20);
+   $alert-margin-top: rem-calc(20);
+   $alert-top-margin: rem-calc(20);
 
 // We use these to style the close buttons
 // $alert-close-color: #333;
@@ -1227,7 +1229,7 @@ $sub-nav-active-cursor: default;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
-// $topbar-link-padding: $topbar-height / 3;
+// $topbar-link-padding: 0;
 
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
