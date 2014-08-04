@@ -6,6 +6,7 @@ gem 'foundation-rails'
 # Devise Authentication
 gem 'devise'
 
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'pry-rails'
