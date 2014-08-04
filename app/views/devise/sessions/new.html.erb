@@ -8,10 +8,9 @@
       <%= f.password_field :password, autocomplete: "off", placeholder: "Enter your password here..." %>
     </label>  
     <% if devise_mapping.rememberable? -%>
-      <label>Remember me
-        <%= f.check_box :remember_me %>
-      </label>
+        <%= f.check_box :remember_me %><label for="checkbox">Remember me</label>
     <% end -%>
+    <br>
     <%= f.submit "Sign in", class: "button radius" %> or 
     <%= render "devise/shared/links" %>
   </fieldset>
