@@ -1,3 +1,6 @@
+Production environment - http://epsilon-live.herokuapp.com/
+Staging environment - http://epsilon-stage.herokuapp.com/
+
 Basic:
 
 As User I want to create personal account.
