@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Balance</th>
+    <th>Last Updated</th>
+    <th>Actions</th>
+  </tr>
+  <% total = 0 %> 
+  <% @accounts.each do |account| %>
+    <tr>
+      <td><%= account.name %></td>
+      <td><%= account.balance %></td>
+      <td><%= account.updated_at %></td>
+      <td><%= link_to "Edit", edit_account_path(account) %> | <%= link_to 'Delete', account_path(account), method: :delete, data: { confirm: 'Are you sure? This operation could not be reverted!' } %> </td>
+      <% total += account.balance %>
+    </tr>
+  <% end %>
+    <tr>
+      <td>Total:</td>
+      <td colspan = "3"><%= total %></td>
+    </tr>
+</table>
+

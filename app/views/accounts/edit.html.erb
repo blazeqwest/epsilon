@@ -1,0 +1,12 @@
+<%= form_for :account, url: accounts_path do |f| %>
+  <fieldset>
+    <legend>Update account info</legend>
+    <label>Change account name
+      <%= f.text_field :name, autofocus: true, :input_html => { :value => @account.name } %>
+    </label>
+    <label>Force update balance
+      <%= f.text_field :balance, :input_html => { :value => @account.balance } %>
+    </label>
+    <%= f.submit "Create account", class:"button radius" %>  
+  </fieldset>
+<% end %>
