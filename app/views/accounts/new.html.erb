@@ -1,0 +1,12 @@
+<%= form_for :account, url: accounts_path do |f| %>
+  <fieldset>
+    <legend>Add new account</legend>
+    <label>Account name
+      <%= f.text_field :name, autofocus: true, placeholder: "Enter name for your account" %>
+    </label>
+    <label>Initial balance
+      <%= f.text_field :balance, placeholder: "Fill in your initial balance" %>
+    </label>
+    <%= f.submit "Create account", class:"button radius" %>  
+  </fieldset>
+<% end %>
