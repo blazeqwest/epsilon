@@ -3,3 +3,5 @@
 <p>Account balance: <%= @account.balance %></p>
 
 <p>Last updated at: <%= @account.updated_at %></p>
+
+<%= link_to "Show transactions", account_transactions_path(@account.id), class: "button rounded" %>
