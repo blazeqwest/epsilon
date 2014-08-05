@@ -11,7 +11,11 @@
       <td><%= account.name %></td>
       <td><%= account.balance %></td>
       <td><%= account.updated_at %></td>
-      <td><%= link_to "Edit", edit_account_path(account) %> | <%= link_to 'Delete', account_path(account), method: :delete, data: { confirm: 'Are you sure? This operation could not be reverted!' } %> </td>
+      <td>
+        <%= link_to 'Show', account_path(account) %> | 
+        <%= link_to "Edit", edit_account_path(account) %> | 
+        <%= link_to 'Delete', account_path(account), method: :delete, data: { confirm: 'Are you sure? This operation could not be reverted!' } %>
+      </td>
       <% total += account.balance %>
     </tr>
   <% end %>
