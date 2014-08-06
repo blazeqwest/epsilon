@@ -3,14 +3,14 @@
 
 ####Basic:####
 
-* As User I want to create personal account.
+* As User I want to create personal account.   &#10004;
 * As User I want to setup month budget.
-* As User I want to setup accounts.
-* As User I want to save transactions.
+* As User I want to setup accounts.   &#10004;
+* As User I want to save transactions.   &#10004;
 * As User I want to see total balance on all accounts.
-* As User I want to see balance on specific account.
-* As User I want to view my Balance changes ASAP.
-* As User I want to view history of my Balance changes.
+* As User I want to see balance on specific account.   &#10004;
+* As User I want to view my Balance changes ASAP.   &#10004;
+* As User I want to view history of my Balance changes.   &#10004;
 
 ####Advanced:####
 
