@@ -1,27 +1,3 @@
-<!--
-<table>
-  <tr>
-    <th>Amount</th>
-    <th>Last Updated</th>
-    <th>Actions</th>
-  </tr>
-  <% total = 0 %> 
-  <% @transactions.each do |transaction| %>
-    <tr>
-      <td><%= transaction.amount %></td>
-      <td><%= transaction.updated_at %></td>
-      <td>
-        <%= link_to "Edit", edit_account_transaction_path(@account,transaction) %> | 
-        <%= link_to 'Delete', account_transaction_path(@account, transaction), method: :delete, data: { confirm: 'Are you sure? This operation could not be reverted!' } %>
-      </td>
-    </tr>
-  <% end %>
-    <tr>
-      <td>Account balance: </td>
-      <td colspan = "2"><%= @account.balance %></td>
-    </tr>
-</table>
- -->
 <table>
   <tr>
     <th>Amount</th>
