@@ -8,6 +8,7 @@
 <strong>Total balance is <%= @balance%></strong>
 </div>
 <ul class='button-group [radius round center]'>
+  <li><%= link_to "Manage accounts", accounts_path, class: 'button [secondary]' %></li>
   <li><%= link_to "Add account", new_account_path, class: 'button [secondary]' %></li>
   <li><%= link_to "Log transaction", "#", class: "button [secondary]" %></li>
   <li><%= link_to "Set budget", "#", class: "button [secondary]" %></li>
