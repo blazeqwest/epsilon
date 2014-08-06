@@ -28,9 +28,13 @@ class TransactionsController < ApplicationController
 
   def index
     @account = Account.find(params[:account_id])
-    @transactions = Transaction.where("account_id = ?", params[:account_id]).paginate(page: params[:page], per_page: 10)
+    @transactions = Transaction.where("account_id = ?", params[:account_id]).order(created_at: :desc).paginate(page: params[:page],per_page: 10)
   end
-
+  
+  def self.unsolved(params)
+    order('created_at DESC').where(solved: false).paginate(page: params[:page],per_page: 3)
+  end
+  
   def edit
     @transaction = Transaction.find(params[:id])
     if can_see?
