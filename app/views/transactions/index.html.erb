@@ -8,7 +8,7 @@
   <% total = 0 %> 
   <% @transactions.each do |transaction| %>
     <tr>
-      <td><%= transaction.amount %></td>
+      <td> <div class = <%= (transaction.amount >= 0.0) ? 'positive' : 'negative' %> ><%= transaction.amount %></div></td>
       <td><%= transaction.updated_at %></td>
       <td>
         <%= link_to "Edit", edit_account_transaction_path(@account,transaction) %> | 
