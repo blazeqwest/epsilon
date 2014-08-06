@@ -1,3 +1,4 @@
+<h4>Transactions log for <%= link_to @account.name, account_path(@account)%></h4>
 <table>
   <tr>
     <th>Amount</th>
@@ -20,4 +21,4 @@
       <td colspan = "2"><%= @account.balance %></td>
     </tr>
 </table>
-<%= will_paginate @transactions %>
+<%= will_paginate @transactions, class: "pagination" %>
