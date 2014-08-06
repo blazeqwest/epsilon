@@ -28,7 +28,7 @@ class TransactionsController < ApplicationController
 
   def index
     @account = Account.find(params[:account_id])
-    @transactions = Transaction.where("account_id = ?", params[:account_id])
+    @transactions = Transaction.where("account_id = ?", params[:account_id]).paginate(page: params[:page], per_page: 10)
   end
 
   def edit
