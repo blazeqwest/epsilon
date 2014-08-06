@@ -1,0 +1,9 @@
+<%= form_for :transaction, url: account_transactions_path do |f| %>
+  <fieldset>
+    <legend>Add new transaction</legend>
+    <label>Amount
+      <%= f.text_field :amount, autofocus: true, placeholder: "Enter amount of transaction" %>
+    </label>
+    <%= f.submit "Log transaction", class:"button radius" %>  
+  </fieldset>
+<% end %>
