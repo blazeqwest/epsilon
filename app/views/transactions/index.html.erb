@@ -8,7 +8,7 @@
   <% total = 0 %> 
   <% @transactions.each do |transaction| %>
     <tr>
-      <td> <div class = <%= (transaction.amount >= 0.0) ? 'positive' : 'negative' %> ><%= transaction.amount %></div></td>
+      <td> <div class = <%= transaction.amount >= 0.0 ? 'positive' : 'negative' %> ><%= transaction.amount %></div></td>
       <td><%= transaction.updated_at %></td>
       <td>
         <%= link_to "Edit", edit_account_transaction_path(@account,transaction) %> | 
@@ -22,3 +22,10 @@
     </tr>
 </table>
 <%= will_paginate @transactions, class: "pagination" %>
+<div id="tag_cloud">
+  <% tag_cloud Transaction.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+<%= @transactions_tagged.each {|transaction| raw @transactions_tagged.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') } unless @transactions_tagged.nil? %>
+

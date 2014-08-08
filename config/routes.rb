@@ -6,9 +6,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   get 'welcome/index'
   root 'welcome#index'
+  
   resources :accounts do
     resources :transactions
   end
+
+  get 'tags/:tag', to: 'transactions#tagged', as: :tag
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

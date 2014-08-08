@@ -27,8 +27,11 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    @account = Account.find(params[:account_id])
+    @account = Account.find(params[:account_id]) unless params[:account_id].nil?
     @transactions = Transaction.where("account_id = ?", params[:account_id]).order(created_at: :desc).paginate(page: params[:page],per_page: 10)
+    if params[:tag]
+      @transactions_tagged = Transaction.where("account_id = ?", params[:account_id]).tagged_with(params[:tag])
+    end
   end
   
   def self.unsolved(params)
@@ -75,8 +78,19 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def tagged
+  if params[:tag].present?
+    @lol = "tag found"
+    @i_see = params
+    @transactions = Transaction.all.tagged_with(params[:tag]).order(created_at: :desc).paginate(page: params[:page],per_page: 10)
+  else
+    @lol = "tag not found" 
+    @transactions = Transaction.all.order(created_at: :desc).paginate(page: params[:page],per_page: 10)
+  end  
+end
+
   private
     def transaction_params
-      params.require(:transaction).permit(:amount)
+      params.require(:transaction).permit(:amount, :tag_list)
     end
 end

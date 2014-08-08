@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#For tagged transactions
+gem 'acts-as-taggable-on'
+
 # UI Framework
 gem 'foundation-rails'
 

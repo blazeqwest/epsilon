@@ -4,6 +4,10 @@
     <label>Update amount
       <%= f.text_field :amount, :input_html => { :value => @transaction.amount } %>
     </label>
+    <div class="field">
+      <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+      <%= f.text_field :tag_list %>
+    </div>
     <%= f.submit "Update transaction", class:"button round" %>  
   </fieldset>
 <% end %>

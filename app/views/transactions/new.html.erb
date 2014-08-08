@@ -4,6 +4,10 @@
     <label>Amount
       <%= f.text_field :amount, autofocus: true, placeholder: "Enter amount of transaction" %>
     </label>
+    <div class="field">
+      <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+      <%= f.text_field :tag_list %>
+    </div>
     <%= f.submit "Log transaction", class:"button round" %>  
   </fieldset>
 <% end %>
