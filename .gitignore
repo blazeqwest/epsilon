@@ -17,3 +17,4 @@
 
 # ignore public assets folder
 /public/assets/
+/config/database.yml
