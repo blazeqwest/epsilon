@@ -1,0 +1,9 @@
+<p>Account name: <%= @account.name %></p>
+
+<p>Account balance: <%= @account.balance %></p>
+
+<p>Last updated at: <%= @account.updated_at %></p>
+<ul class='button-group [radius round center]'>
+  <%= link_to "Add transaction", new_account_transaction_path(@account.id), class: "button round" %>
+  <%= link_to "Show transactions", account_transactions_path(@account.id), class: "button round" %>
+</ul>

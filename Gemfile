@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # UI Framework
 gem 'foundation-rails'
 
+#Magic padination gem
+gem 'will_paginate', '~> 3.0.5'
+
 # Devise Authentication
 gem 'devise'
 

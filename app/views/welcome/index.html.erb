@@ -1,3 +1,16 @@
-<h1>Hello!</h1>
-<p>Welcome to Epsilon project!</p>
+<div class="panel round">
+  <h4>Hey, these are your things to track:</h4>
+  <hr>
+  <% @accounts.each do |account|%>
+    <%= link_to account.name, account_path(account) %> balance: <%= account.balance %><hr>
+  <% end %>
+  <br>
+<strong>Total balance is <%= @balance%></strong>
+</div>
+<ul class='button-group [radius round center]'>
+  <li><%= link_to "Manage accounts", accounts_path, class: 'button [secondary]' %></li>
+  <li><%= link_to "Add account", new_account_path, class: 'button [secondary]' %></li>
+  <li><%= link_to "Log transaction", "#", class: "button [secondary]" %></li>
+  <li><%= link_to "Set budget", "#", class: "button [secondary]" %></li>
+</ul>
 

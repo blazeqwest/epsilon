@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :transaction do
-    amount 100
+    amount { Faker::Number.number(2) }
     association :account
   end
 end
