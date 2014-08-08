@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+  post "/make_main_account" => "accounts#make_main", as: :make_main_account
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

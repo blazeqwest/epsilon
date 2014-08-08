@@ -19,7 +19,7 @@ class AccountsController < ApplicationController
   end
 
   def index
-     @accounts = Account.where("user_id = ?", current_user.id)
+    @accounts = Account.where("user_id = ?", current_user.id)
   end
 
   def edit
@@ -38,6 +38,14 @@ class AccountsController < ApplicationController
       redirect_to accounts_path
     else
       render :status => :forbidden, :text => "Forbidden fruit"
+    end
+  end
+
+  def make_main
+    account = current_user.accounts.find(params[:format])
+    if account
+      current_user.accounts.where.not(id: account.id).update_all(main: false)
+      account.update(main: true)
     end
   end
 

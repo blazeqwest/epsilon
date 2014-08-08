@@ -14,3 +14,37 @@
 .positive {
   color: green;
 }
+
+button {
+  color: #1c4c54;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 9pt;
+  padding: 1em 0;
+  margin: 1em;
+  background-color: #fff;
+  border: none;
+  border-radius: .25em;
+  width: 10em;
+
+  &.data-selected {
+    background-color: #a3dae3;
+  }
+  
+  &[data-selected] {
+    background-color: #a3dae3;
+    
+    &:hover {
+      color: #1c4c54;
+    }
+  }
+  
+  &:hover {
+    color: #50b7c8;
+    cursor: pointer;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}

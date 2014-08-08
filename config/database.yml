@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   host: localhost
-  username: postgres
+  username: epsilon
   password: qwestqwest
   database: eps_dev
 
@@ -10,7 +10,7 @@ test:
   encoding: utf8
   database: eps_test
   pool: 5
-  username: postgres
+  username: epsilon
   password: 
 
 production:
