@@ -17,3 +17,23 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$("button.make-main").on("click", function() {
+  var $clickedButton = $(this);
+  
+  $("button.make-main").removeClass("data-selected");
+  $("button.make-main").text("make default");
+  $clickedButton.addClass("data-selected");
+  
+  $clickedButton.text("Awesome!");
+
+  // There is certainly a better way...
+  setTimeout(function() {
+    $clickedButton.text("I’ll remember!");
+
+    setTimeout(function() {
+      $clickedButton.text("Default");
+    }, 1000);
+  }, 700);
+  
+});
