@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808223431) do
+ActiveRecord::Schema.define(version: 20140809205941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,26 @@ ActiveRecord::Schema.define(version: 20140808223431) do
     t.boolean  "main",       default: false
   end
 
+  create_table "budgets", force: true do |t|
+    t.string   "title"
+    t.decimal  "amount",     precision: 8, scale: 2
+    t.string   "status"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "budgets", ["user_id"], name: "index_budgets_on_user_id", using: :btree
+
   create_table "transactions", force: true do |t|
     t.float    "amount",     default: 0.0
     t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "budget_id"
   end
+
+  add_index "transactions", ["budget_id"], name: "index_transactions_on_budget_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

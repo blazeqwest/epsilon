@@ -9,7 +9,7 @@ class AccountsController < ApplicationController
     @account = Account.new(account_params)
     @account.user_id = current_user.id
     @account.save
-    redirect_to @account
+    redirect_to accounts_path
   end
   
   def show

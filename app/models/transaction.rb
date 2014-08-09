@@ -3,4 +3,5 @@ class Transaction < ActiveRecord::Base
   validates :account, presence: true
 
   belongs_to :account
+  belongs_to :budget
 end

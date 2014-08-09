@@ -9,10 +9,10 @@ class TransactionsController < ApplicationController
   end
   
   def create
-    @transaction = Transaction.new(transaction_params)
+    @transaction = Transaction.new(transaction_params.merge(budget_id: params[:transaction][:budget]))
     @transaction.account = default_account
     @transaction.save
-    @account.balance = @transaction.amount + @default_account.balance
+    @default_account.balance = @transaction.amount + @default_account.balance
     @default_account.save
     redirect_to @default_account
   end
@@ -76,6 +76,6 @@ class TransactionsController < ApplicationController
 
   private
     def transaction_params
-      params.require(:transaction).permit(:amount)
+      params.require(:transaction).permit(:amount, :budget_id)
     end
 end

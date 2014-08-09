@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :accounts
+  has_many :accounts, dependent: :destroy
+  has_many :transactions, through: :accounts
+  has_many :budgets
 
   validate :email, presence: true
 
