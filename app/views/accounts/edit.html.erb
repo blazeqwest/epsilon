@@ -1,4 +1,4 @@
-<%= form_for :account, url: accounts_path do |f| %>
+<%= form_for :account, url: account_path, html: { method: :put } do |f| %>
   <fieldset>
     <legend>Update account info</legend>
     <label>Change account name
@@ -7,6 +7,6 @@
     <label>Force update balance
       <%= f.text_field :balance, :input_html => { :value => @account.balance } %>
     </label>
-    <%= f.submit "Create account", class:"button round" %>  
+    <%= f.submit "Edit account", class:"button round" %>  
   </fieldset>
 <% end %>
