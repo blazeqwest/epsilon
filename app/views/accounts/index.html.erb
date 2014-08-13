@@ -15,6 +15,15 @@
         <%= link_to 'Show', account_path(account) %> | 
         <%= link_to "Edit", edit_account_path(account) %> | 
         <%= link_to 'Delete', account_path(account), method: :delete, data: { confirm: 'Are you sure? This operation could not be reverted!' } %>
+        <%- if account.main == true %>
+          <%= link_to make_main_account_path(account), method: :post, :remote => true do %>
+            <button class = "data-selected make-main">Default</button>
+          <%- end %>
+        <%- else %>
+          <%= link_to make_main_account_path(account), method: :post, :remote => true do %>
+            <button class = "make-main">make default</button>
+          <%- end %>
+        <%- end %>
       </td>
       <% total += account.balance %>
     </tr>
